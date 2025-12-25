@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Waste Management – Bangalore</title>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Smart Waste Management Dashboard</h1>
+  <p>Bangalore | Real-Time Bin Monitoring & Pickup Scheduling</p>
+</header>
+
+<main>
+
+  <!-- LEFT DASHBOARD -->
+  <div class="left">
+
+    <div class="card fade-in">
+      <h3>Select Zone</h3>
+      <select id="zoneSelect" onchange="updateZone()">
+        <option value="">-- Select Zone --</option>
+        <option value="Koramangala">Koramangala</option>
+        <option value="Indiranagar">Indiranagar</option>
+        <option value="Whitefield">Whitefield</option>
+        <option value="Yelahanka">Yelahanka</option>
+      </select>
+    </div>
+
+    <div class="card slide-up">
+      <h3>Pickup Schedule</h3>
+      <p id="pickupDay">📅 Day: -</p>
+      <p id="pickupTime">⏰ Time: -</p>
+      <p id="vehicle">🚛 Vehicle: -</p>
+    </div>
+
+    <div class="card slide-up">
+      <h3>Notifications 🔔</h3>
+      <ul id="notifications">
+        <li>Select a zone to view alerts</li>
+      </ul>
+    </div>
+
+    <div class="card slide-up">
+  <h3>Selected Bin Details</h3>
+  <p id="binZone">📍 Zone: -</p>
+  <p id="binFill">🗑 Fill Level: -</p>
+  <p id="binBattery">🔋 Battery: -</p>
+  <p id="binStatus">⚙ Status: -</p>
+</div>
+
+    <div class="card slide-up">
+      <h3>Bin Status Legend</h3>
+        <p><span class="dot green"></span> Low (0–40%)</p>
+        <p><span class="dot orange"></span> Medium (40–70%)</p>
+        <p><span class="dot red"></span> High (70%+)</p>
+        <p><span class="dot gray"></span> Inactive Bin</p>
+
+    </div>
+
+  </div>
+
+  <!-- RIGHT MAP AREA -->
+  <div class="right fade-in">
+    <h3>Live Bin Map</h3>
+    <div id="map"></div>
+  </div>
+
+</main>
+
+<footer>
+  Mini Project | CSE | Smart City Waste Management
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
